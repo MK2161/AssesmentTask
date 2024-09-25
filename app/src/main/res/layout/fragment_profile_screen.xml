@@ -1,0 +1,1395 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EEEEEE">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/uiCvTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:backgroundTint="#EEEEEE"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="2dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:backgroundTint="@color/white"
+                    android:padding="15dp">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvImage"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        app:cardCornerRadius="50dp"
+                        app:cardElevation="0dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/uiIvImages"
+                            android:layout_width="70dp"
+                            android:layout_height="70dp"
+                            android:contentDescription="@string/basic_image"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/basic" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvHello"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:padding="4dp"
+                        android:text="@string/str_thomas_shelby"
+                        android:textColor="#252525"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvPersonalUpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="4dp"
+                        android:background="@color/light_grey"
+                        android:drawableStart="@drawable/ic_upi"
+                        android:drawableEnd="@drawable/ic_copy"
+                        android:drawablePadding="10dp"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="@string/ic_qpay_id"
+                        android:textColor="#999999"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                        app:layout_constraintTop_toBottomOf="@id/uiTvHello" />
+
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/uiIvQrCode"
+                        android:layout_width="40dp"
+                        android:layout_height="30dp"
+                        android:contentDescription="@string/basic_image"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_right_arrow"
+                        app:layout_constraintBottom_toBottomOf="@+id/uiCvImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiCvWalletBalance"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="20dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiCvTitle"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="15dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvWalletTotal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:hint="@string/str_wallet_balance"
+                        android:text="@string/str_wallet_balance"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvWalletBalance"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:backgroundTint="@color/white"
+                        android:drawableEnd="@drawable/ic_hide_password"
+                        android:drawablePadding="10dp"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="@string/str_amount"
+                        android:textColor="#252525"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="@+id/uiTvWalletTotal"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvWalletTotal" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/uiBtnAddMoney"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:pointerIcon="@color/color_green"
+                        android:text="@string/str_add_more"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_green"
+                        android:textSize="13sp"
+                        android:theme="@style/Theme.MaterialComponents"
+                        app:cornerRadius="25dp"
+                        app:icon="@android:drawable/ic_menu_add"
+                        app:iconTint="@color/color_green"
+                        app:layout_constraintBottom_toBottomOf="@id/uiTvWalletBalance"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/uiTvWalletTotal"
+                        app:layout_constraintWidth_percent="0.4"
+                        app:strokeColor="@color/color_green"
+                        app:strokeWidth="1dp" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvBankDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiCvWalletBalance"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvWalletRemaining"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/ic_receive_money_in"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/uiIvSbiLogo"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:contentDescription="@string/basic_image"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/ic_sbi"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvWalletRemaining" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvWallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:background="@color/white"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="@string/str_card_number"
+                        android:textColor="#252525"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/uiIvSbiLogo"
+                        app:layout_constraintTop_toBottomOf="@id/uiTvWalletRemaining" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="2dp"
+                        android:text="@string/str_state_bank_of_india"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toEndOf="@+id/uiIvSbiLogo"
+                        app:layout_constraintTop_toBottomOf="@id/uiTvWallet" />
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/uiBtnManage"
+                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_manage"
+                        android:textAllCaps="false"
+                        android:textColor="@color/color_green"
+                        android:textSize="13sp"
+                        android:textStyle="bold"
+                        android:theme="@style/Theme.MaterialComponents"
+                        app:cornerRadius="25dp"
+                        app:icon="@drawable/ic_manage"
+                        app:iconTint="@color/color_green"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="@id/uiTvWalletRemaining"
+                        app:layout_constraintWidth_percent="0.4"
+                        app:strokeColor="@color/color_green"
+                        app:strokeWidth="1dp" />
+
+                    <View
+                        android:id="@+id/uiViewBottomDivider"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:background="@color/light_grey"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvName" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/uiTvUpi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:layout_marginTop="8dp"
+                        android:background="@color/light_grey"
+                        android:drawableStart="@drawable/ic_upi"
+                        android:drawableEnd="@drawable/ic_copy"
+                        android:drawablePadding="10dp"
+                        android:enabled="false"
+                        android:gravity="center"
+                        android:text="@string/ic_qpay_id"
+                        android:textColor="#999999"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/uiViewBottomDivider" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvAddBankDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiMcvBankDetails"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvWallet"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_bank_accounts"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <HorizontalScrollView
+                        android:id="@+id/horizontalScrollView"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal"
+                            android:padding="10dp">
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/uiTvWallet"
+                                app:strokeColor="@color/light_grey"
+                                app:strokeWidth="2dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/uiIvSbi"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_margin="4dp"
+                                        android:layout_marginStart="50dp"
+                                        android:contentDescription="@string/basic_image"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/ic_sbi"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/uiBtnPrimary"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="100dp"
+                                        android:text="@string/str_primary"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/color_green"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold"
+                                        android:theme="@style/Theme.MaterialComponents"
+                                        app:cornerRadius="25dp"
+                                        app:iconTint="@color/color_green"
+                                        app:layout_constraintStart_toEndOf="@+id/uiIvSbi"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintWidth_percent="0.4"
+                                        app:strokeColor="@color/color_green"
+                                        app:strokeWidth="1dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/uiTvSbiAccName"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="75dp"
+                                        android:text="@string/str_state_bank_of_india"
+                                        android:textColor="#252525"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/uiIvSbi" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/uiTvSbiNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:text="@string/ic_8_digit"
+                                        android:textColor="#999999"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/uiTvSbiAccName" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/uiBtnCheckBalance"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="25dp"
+                                        android:text="@string/str_check_balance"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/color_green"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold"
+                                        android:theme="@style/Theme.MaterialComponents"
+                                        app:cornerRadius="25dp"
+                                        app:icon="@drawable/ic_manage"
+                                        app:iconTint="@color/color_green"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/uiTvSbiNumber"
+                                        app:layout_constraintWidth_percent="0.9"
+                                        app:strokeColor="@color/color_green"
+                                        app:strokeWidth="1dp" />
+
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="16dp"
+                                app:cardBackgroundColor="@color/white"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/uiTvWallet"
+                                app:strokeColor="@color/light_grey"
+                                app:strokeWidth="2dp">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_margin="10dp">
+
+                                    <androidx.appcompat.widget.AppCompatImageView
+                                        android:id="@+id/uiIvBankOfBaroda"
+                                        android:layout_width="40dp"
+                                        android:layout_height="40dp"
+                                        android:layout_margin="4dp"
+                                        android:layout_marginStart="50dp"
+                                        android:contentDescription="@string/basic_image"
+                                        android:scaleType="centerCrop"
+                                        android:src="@drawable/ic_bank_of_baroda"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/uiBtnBankOfBarodaPrimary"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="100dp"
+                                        android:text="@string/str_primary"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/color_green"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold"
+                                        android:theme="@style/Theme.MaterialComponents"
+                                        app:cornerRadius="25dp"
+                                        app:iconTint="@color/color_green"
+                                        app:layout_constraintStart_toEndOf="@+id/uiIvBankOfBaroda"
+                                        app:layout_constraintTop_toTopOf="parent"
+                                        app:layout_constraintWidth_percent="0.4"
+                                        app:strokeColor="@color/color_green"
+                                        app:strokeWidth="1dp" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@id/uiTvSbiName"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_margin="10dp"
+                                        android:layout_marginTop="75dp"
+                                        android:text="@string/str_state_bank_of_india"
+                                        android:textColor="#252525"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/uiIvBankOfBaroda" />
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/uiTvCardNumber"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginStart="10dp"
+                                        android:text="@string/ic_8_digit"
+                                        android:textColor="#999999"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@+id/uiTvSbiName" />
+
+                                    <com.google.android.material.button.MaterialButton
+                                        android:id="@+id/uiBtnBankOfBarodaBalance"
+                                        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                        android:layout_width="0dp"
+                                        android:layout_height="wrap_content"
+                                        android:layout_marginTop="25dp"
+                                        android:text="@string/str_manage"
+                                        android:textAllCaps="false"
+                                        android:textColor="@color/color_green"
+                                        android:textSize="13sp"
+                                        android:textStyle="bold"
+                                        android:theme="@style/Theme.MaterialComponents"
+                                        app:cornerRadius="25dp"
+                                        app:icon="@drawable/ic_manage"
+                                        app:iconTint="@color/color_green"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toBottomOf="@id/uiTvCardNumber"
+                                        app:layout_constraintWidth_percent="0.9"
+                                        app:strokeColor="@color/color_green"
+                                        app:strokeWidth="1dp" />
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                            <com.google.android.material.card.MaterialCardView
+                                android:layout_width="250dp"
+                                android:layout_height="190dp"
+                                android:layout_margin="14dp"
+                                android:background="@drawable/card_hyphen_border"
+                                app:cardCornerRadius="8dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/uiTvWallet">
+
+                                <androidx.constraintlayout.widget.ConstraintLayout
+                                    android:id="@+id/uiCvAddNew"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/white">
+
+                                    <androidx.appcompat.widget.AppCompatTextView
+                                        android:id="@+id/uiTvAddNewBankAccount"
+                                        android:layout_width="wrap_content"
+                                        android:layout_height="wrap_content"
+                                        android:drawableTop="@android:drawable/ic_menu_add"
+                                        android:text="@string/str_add_new_bank_account"
+                                        android:textColor="@color/color_green"
+                                        android:textSize="16sp"
+                                        android:textStyle="bold"
+                                        app:layout_constraintBottom_toBottomOf="parent"
+                                        app:layout_constraintEnd_toEndOf="parent"
+                                        app:layout_constraintStart_toStartOf="parent"
+                                        app:layout_constraintTop_toTopOf="parent" />
+
+                                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                            </com.google.android.material.card.MaterialCardView>
+
+                        </LinearLayout>
+
+                    </HorizontalScrollView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvSecurity"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiMcvAddBankDetail"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvSecurity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_security_amp_protection"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvSecurity"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvSecurity"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvFingerLock"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvFingerImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_fingerprint" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvScreenLock"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_screen_lock"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvFingerLock"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvBioMatric"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_biometric_amp_screen_locks"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvFingerLock"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvScreenLock" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvToggle"
+                                android:layout_width="40dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_toggle"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvFingerLock"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvChangePassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiCvSecurity"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvChangePasswordImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvChangePasswordImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_hide_password" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvChangePassword"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_change_password"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvChangePasswordImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvResetPassword"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_reset_your_app_password"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvChangePasswordImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvChangePassword" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvPasswordRightArrow"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvChangePasswordImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvSettings"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiMcvSecurity"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvSetting"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_settings_amp_preferences"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvSetting"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvSetting"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvLanguageImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvLanguageImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_language" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_languages"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvLanguageImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvChooseLanguage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_choose_language_english"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvLanguageImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvLanguage" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvLanguageArrow"
+                                android:layout_width="40dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvLanguageImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvPermission"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiCvSetting"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvPermissionImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvPermissionImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_hide_password" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvPermission"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_permissions"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvPermissionImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvDataSharing"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_manage_data_sharing_settings"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvPermissionImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvPermission" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvSettingRightArrow"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvPermissionImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="TooManyViews" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvHelp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiMcvSettings"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@id/uiTvHelp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/str_help_amp_support"
+                        android:textColor="#999999"
+                        android:textSize="14sp"
+                        android:textStyle="normal"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvHelp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvHelp"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvHelpImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvHelpImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_help" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvHelp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_help"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvHelpImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvBiometricScreenLock"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_biometric_amp_screen_locks"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvHelpImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvHelp" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvHelpArrow"
+                                android:layout_width="40dp"
+                                android:layout_height="30dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvHelpImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvReport"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiCvHelp"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvReportImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvReportImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_report" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvReport"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_report_fraud"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvReportImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvResetApp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_reset_your_app_password"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvReportImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvReport" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvReportRightArrow"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvReportImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvPrivacy"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiCvReport"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvPrivacyImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvPrivacyImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_privacy" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvPrivacy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_privacy_policy"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvPrivacyImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvResetAppPrivacy"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_reset_your_app_password"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvPrivacyImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvPrivacy" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvPrivacyRightArrow"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvPrivacyImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/uiCvAbout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="16dp"
+                        android:layout_marginTop="10dp"
+                        android:backgroundTint="@color/white"
+                        app:cardCornerRadius="16dp"
+                        app:cardElevation="2dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiCvPrivacy"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_margin="10dp"
+                            android:backgroundTint="@color/white">
+
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/uiCvAboutImage"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                app:cardCornerRadius="50dp"
+                                app:cardElevation="0dp"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent">
+
+                                <androidx.appcompat.widget.AppCompatImageView
+                                    android:id="@+id/uiIvAboutImage"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_marginTop="5dp"
+                                    android:contentDescription="@string/basic_image"
+                                    android:scaleType="centerCrop"
+                                    android:src="@drawable/ic_about" />
+                            </androidx.cardview.widget.CardView>
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvAbout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="6dp"
+                                android:layout_marginTop="8dp"
+                                android:padding="4dp"
+                                android:text="@string/str_privacy_policy"
+                                android:textColor="#252525"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvAboutImage"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/uiTvResetAppAbout"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="7dp"
+                                android:background="@color/white"
+                                android:drawablePadding="10dp"
+                                android:enabled="false"
+                                android:gravity="center"
+                                android:text="@string/str_reset_your_app_password"
+                                android:textColor="#999999"
+                                android:textSize="16sp"
+                                android:textStyle="bold"
+                                app:layout_constraintStart_toEndOf="@+id/uiCvAboutImage"
+                                app:layout_constraintTop_toBottomOf="@id/uiTvAbout" />
+
+                            <androidx.appcompat.widget.AppCompatImageView
+                                android:id="@+id/uiIvAboutRightArrow"
+                                android:layout_width="30dp"
+                                android:layout_height="25dp"
+                                android:contentDescription="@string/basic_image"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_right_arrow"
+                                app:layout_constraintBottom_toBottomOf="@+id/uiCvAboutImage"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/uiMcvLogout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                app:cardBackgroundColor="#EEEEEE"
+                app:cardCornerRadius="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiMcvHelp"
+                app:strokeColor="@color/light_grey"
+                app:strokeWidth="2dp">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uiBtnLogout"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="20dp"
+                    android:backgroundTint="@color/red_color"
+                    android:fontFamily="sans-serif-medium"
+                    android:pointerIcon="@color/color_green"
+                    android:text="@string/str_add_more"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_green"
+                    android:textSize="13sp"
+                    app:cornerRadius="25dp"
+                    app:icon="@android:drawable/ic_menu_add"
+                    app:iconTint="@color/color_green"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintWidth_percent="0.4"
+                    app:strokeColor="@color/color_green"
+                    app:strokeWidth="1dp" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

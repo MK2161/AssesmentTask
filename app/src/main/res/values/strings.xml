@@ -1,0 +1,34 @@
+<resources>
+    <string name="app_name">AssesmentTask</string>
+    <string name="basic_image">images</string>
+    <string name="str_thomas_shelby">Thomas Shelby</string>
+    <string name="str_wallet_balance">Wallet balance</string>
+    <string name="str_amount">₹ 2,36,000.47</string>
+    <string name="str_add_more">Add more</string>
+    <string name="ic_receive_money_in">Receive money in</string>
+    <string name="ic_qpay_id">8778214386@qpay</string>
+    <string name="str_card_number">xxx xx 8658</string>
+    <string name="str_state_bank_of_india">State Bank of India</string>
+    <string name="str_manage">Manage</string>
+    <string name="str_bank_accounts">Bank Accounts</string>
+    <string name="str_primary">Primary</string>
+    <string name="ic_8_digit">xxxx 3941</string>
+    <string name="str_check_balance">Check Balance</string>
+    <string name="str_add_new_bank_account">Add New Bank Account</string>
+    <string name="str_security_amp_protection"><![CDATA[Security & Protection]]></string>
+    <string name="str_screen_lock">Screen lock</string>
+    <string name="str_biometric_amp_screen_locks"><![CDATA[Biometric & Screen Locks]]></string>
+    <string name="str_change_password">Change password</string>
+    <string name="str_reset_your_app_password">Reset your app password</string>
+    <string name="str_settings_amp_preferences"><![CDATA[Settings & Preferences]]></string>
+    <string name="str_choose_language_english">Choose language: English</string>
+    <string name="str_permissions">Permissions</string>
+    <string name="str_manage_data_sharing_settings">Manage data sharing settings</string>
+    <string name="str_help_amp_support"><![CDATA[Help & Support]]></string>
+    <string name="str_help">Help</string>
+    <string name="str_report_fraud">Report fraud</string>
+    <string name="str_privacy_policy">Privacy policy</string>
+    <string name="str_languages">Languages</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
