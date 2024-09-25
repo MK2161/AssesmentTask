@@ -3,6 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
+    android:paddingVertical="24dp"
+    android:background="@color/light_grey10"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     >
@@ -12,6 +14,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
+        android:background="@color/light_grey10"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@+id/uiViewPage">
@@ -56,6 +59,7 @@
                     android:id="@+id/uiTabs"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/light_grey10"
                     app:tabGravity="fill"
                     app:tabMode="fixed"/>
             </LinearLayout>
