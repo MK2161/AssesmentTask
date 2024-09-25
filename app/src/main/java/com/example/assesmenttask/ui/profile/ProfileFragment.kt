@@ -9,30 +9,17 @@ import com.example.assesmenttask.R
 
 
 class ProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
 
-        }
     }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_profile_screen, container, false)
-    }
-
-    companion object {
-        fun newInstance() =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
     }
 }

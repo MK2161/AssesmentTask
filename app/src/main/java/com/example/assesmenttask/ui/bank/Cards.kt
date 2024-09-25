@@ -1,4 +1,4 @@
-package com.example.assesmenttask.ui.home
+package com.example.assesmenttask.ui.bank
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -20,14 +20,5 @@ class Cards : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_cards, container, false)
-    }
-
-    companion object {
-
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            Cards().apply {
-
-            }
     }
 }

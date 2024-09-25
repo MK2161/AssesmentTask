@@ -12,31 +12,24 @@ import com.example.assesmenttask.ui.profile.ProfileFragment
 import com.google.android.material.tabs.TabLayoutMediator
 
 class BankFragment : Fragment() {
-    private var binding: FragmentCardBinding? = null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            binding?.uiViewPage?.adapter = ViewPagerAdapter(this)
-            TabLayoutMediator(binding?.uiTabs!!, binding?.uiViewPage!!) { tab, position ->
-                tab.text = tobBarItems[position].title
-            }.attach()
-        }
+    private val binding by lazy {
+        FragmentCardBinding.inflate(layoutInflater)
     }
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding =  FragmentCardBinding.inflate(inflater, container, false)
-        return binding?.root
+        return binding.root
+    }
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
     }
 
-    companion object {
-        fun newInstance() =
-            ProfileFragment().apply {
-                arguments = Bundle().apply {
-
-                }
-            }
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.uiViewPage.adapter = ViewPagerAdapter(requireActivity())
+        TabLayoutMediator(binding.uiTabs, binding.uiViewPage) { tab, position ->
+            tab.text = tobBarItems[position].title
+        }.attach()
     }
 }

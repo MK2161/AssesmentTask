@@ -4,22 +4,15 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.assesmenttask.databinding.ActivityMainBinding
-import com.example.assesmenttask.ui.MainViewModel
-import com.example.assesmenttask.ui.home.HomeFragment
 import com.example.assesmenttask.ui.bank.BankFragment
+import com.example.assesmenttask.ui.home.HomeFragment
 import com.example.assesmenttask.ui.profile.ProfileFragment
-import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
-
-
-    private val viewModel: MainViewModel by inject()
     private val homeFragment by lazy {
-        HomeFragment()
+        HomeFragment.newInstance()
     }
 
     private val bankFragment by lazy {
@@ -34,26 +27,12 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         enableEdgeToEdge()
         setContentView(binding?.root)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
-            val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
-            v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
-            insets
-        }
-        setUpUi()
+        changeFragment(homeFragment, "homeFragment")
+        binding?.navView?.menu?.findItem(R.id.navigation_history)?.isEnabled = false
         handleNavigationView()
     }
 
-    private fun setUpUi() {
-        viewModel.userDetails.observe(this) { id ->
-           // onNavigationOtp(id)
-        }
-        viewModel.error.observe(this) { message ->
-            showErrorMessage(message)
-        }
-    }
-   /* supportFragmentManager.beginTransaction()
-    .add(R.id.fragment_container, fragment)
-    .commit()*/
+
     private fun handleNavigationView(){
         binding?.navView?.setOnItemSelectedListener {
             when (it.itemId) {

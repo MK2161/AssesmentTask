@@ -1,18 +1,19 @@
 package com.example.assesmenttask.adapter
 
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
-import com.example.assesmenttask.ui.home.Accounts
-import com.example.assesmenttask.ui.home.Cards
+import com.example.assesmenttask.ui.bank.AccountsFragment
+import com.example.assesmenttask.ui.bank.Cards
 
-class ViewPagerAdapter(fragmentActivity: Fragment) : FragmentStateAdapter(fragmentActivity){
+class ViewPagerAdapter(fragmentActivity: FragmentActivity) : FragmentStateAdapter(fragmentActivity){
     override fun getItemCount(): Int = 2
 
     override fun createFragment(position: Int): Fragment {
 
          return when(position){
             0 -> {
-                Accounts()
+                AccountsFragment()
             }
 
             1 -> {
@@ -20,7 +21,7 @@ class ViewPagerAdapter(fragmentActivity: Fragment) : FragmentStateAdapter(fragme
             }
 
             else -> {
-                Accounts()
+                Cards()
             }
         }
     }

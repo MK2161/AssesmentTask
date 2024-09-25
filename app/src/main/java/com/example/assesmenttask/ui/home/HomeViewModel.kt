@@ -1,4 +1,4 @@
-package com.example.assesmenttask.ui
+package com.example.assesmenttask.ui.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -8,10 +8,12 @@ import com.example.assesmenttask.data.model.UserDetails
 import com.example.assesmenttask.data.remote.ApiRepository
 import com.example.assesmenttask.handler.CustomResponse
 import kotlinx.coroutines.launch
+import org.koin.java.KoinJavaComponent.inject
 
-class MainViewModel(
+class HomeViewModel(
     private val  apiRepository: ApiRepository
 ) : ViewModel() {
+
 
     private val userDetailsLd = MutableLiveData<MutableList<UserDetails?>>()
     private val errorMessageLd = MutableLiveData<String>()
@@ -19,7 +21,11 @@ class MainViewModel(
     val error: LiveData<String> = errorMessageLd
     val userDetails: LiveData<MutableList<UserDetails?>> = userDetailsLd
 
-    fun getUserDetails() {
+    init {
+        getUserDetails()
+    }
+
+    private  fun getUserDetails() {
         viewModelScope.launch {
             when (val response = apiRepository.getUserDetails()) {
                 is CustomResponse.Success -> userDetailsLd.value = response.data
