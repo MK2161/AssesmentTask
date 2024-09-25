@@ -5,15 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.example.assesmenttask.R
+import com.example.assesmenttask.adapter.ViewPagerAdapter
+import com.example.assesmenttask.data.model.tobBarItems
+import com.example.assesmenttask.databinding.FragmentCardBinding
 import com.example.assesmenttask.ui.profile.ProfileFragment
+import com.google.android.material.tabs.TabLayoutMediator
 
 class BankFragment : Fragment() {
-
+    private var binding: FragmentCardBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         arguments?.let {
-
+            binding?.uiViewPage?.adapter = ViewPagerAdapter(this)
+            TabLayoutMediator(binding?.uiTabs!!, binding?.uiViewPage!!) { tab, position ->
+                tab.text = tobBarItems[position].title
+            }.attach()
         }
     }
 
@@ -21,8 +27,8 @@ class BankFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_bank, container, false)
+        binding =  FragmentCardBinding.inflate(inflater, container, false)
+        return binding?.root
     }
 
     companion object {

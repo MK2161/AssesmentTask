@@ -1,27 +1,32 @@
 package com.example.assesmenttask
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.fragment.app.Fragment
 import com.example.assesmenttask.databinding.ActivityMainBinding
-import com.example.assesmenttask.ui.HomeFragment
+import com.example.assesmenttask.ui.MainViewModel
+import com.example.assesmenttask.ui.home.HomeFragment
 import com.example.assesmenttask.ui.bank.BankFragment
 import com.example.assesmenttask.ui.profile.ProfileFragment
+import org.koin.android.ext.android.inject
 
 class MainActivity : AppCompatActivity() {
 
+
+    private val viewModel: MainViewModel by inject()
     private val homeFragment by lazy {
-        HomeFragment.newInstance()
+        HomeFragment()
     }
 
     private val bankFragment by lazy {
-        BankFragment.newInstance()
+        BankFragment()
     }
     private val profileFragment by lazy {
-        ProfileFragment.newInstance()
+        ProfileFragment()
     }
     private var binding : ActivityMainBinding? = null
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,9 +39,21 @@ class MainActivity : AppCompatActivity() {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
+        setUpUi()
         handleNavigationView()
     }
 
+    private fun setUpUi() {
+        viewModel.userDetails.observe(this) { id ->
+           // onNavigationOtp(id)
+        }
+        viewModel.error.observe(this) { message ->
+            showErrorMessage(message)
+        }
+    }
+   /* supportFragmentManager.beginTransaction()
+    .add(R.id.fragment_container, fragment)
+    .commit()*/
     private fun handleNavigationView(){
         binding?.navView?.setOnItemSelectedListener {
             when (it.itemId) {
@@ -82,5 +99,9 @@ class MainActivity : AppCompatActivity() {
         fragmentTransaction.setPrimaryNavigationFragment(fragmentTemp)
         fragmentTransaction.setReorderingAllowed(true)
         fragmentTransaction.commitNowAllowingStateLoss()
+    }
+
+    private fun showErrorMessage(error: String) {
+        Toast.makeText(this, error, Toast.LENGTH_SHORT).show()
     }
 }
