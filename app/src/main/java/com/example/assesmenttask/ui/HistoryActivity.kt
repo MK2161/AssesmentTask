@@ -1,5 +1,7 @@
 package com.example.assesmenttask.ui
 
+import android.app.PendingIntent
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
@@ -8,6 +10,7 @@ import com.example.assesmenttask.databinding.HistoryScreenBinding
 import com.example.assesmenttask.handler.showFaceBottomSheetDialog
 import com.example.assesmenttask.ui.home.HomeViewModel
 import org.koin.android.ext.android.inject
+
 
 class HistoryActivity : AppCompatActivity() {
     private var binding : HistoryScreenBinding? = null
@@ -31,7 +34,11 @@ class HistoryActivity : AppCompatActivity() {
         viewModel.userDetails.observe(this) { id ->
             binding?.uiRvHistoryDetails?.adapter = HistoryListAdapter(
                 context = this,
-                userDetails = id
+                userDetails = id,
+                onHistoryClicked = {
+                    val intent = Intent(this, SendMoneyActivity :: class.java)
+                    startActivity(intent)
+                }
             )
         }
         viewModel.error.observe(this) { message ->

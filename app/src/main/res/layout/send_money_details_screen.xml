@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiIvBackArrow"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_back_arrow"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiTvSendMoney"
+        android:text="Send Money"
+        android:textColor="#252525"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/uiIvBackArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uiIvBackArrow"
+        app:layout_constraintBottom_toBottomOf="@id/uiIvBackArrow"/>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/uiTvSendMoney"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/uiCvImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvImages"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:contentDescription="@string/basic_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/basic" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvSenderName"
+            android:text="Ibrahim Mohammedali"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:drawableEnd="@drawable/ic_green_tick"
+            android:drawablePadding="4dp"
+            android:textColor="@color/dark_grey"
+            app:layout_constraintTop_toBottomOf="@+id/uiCvImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvSenderUpiId"
+            android:text = "8778214386@qpay"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvSenderName"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="16dp"
+            app:strokeColor="@color/light_grey"
+            app:strokeWidth="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvSenderUpiId">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_margin="20dp"
+                android:layout_height="wrap_content">
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvEnterAmount"
+                    android:text="Enter Amount"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/uiMcvEnterAmount"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    android:layout_marginTop="5dp"
+                    app:strokeColor="@color/light_grey"
+                    app:strokeWidth="2dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvEnterAmount">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:id="@+id/uiEtEnterAmount"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:textColor="@color/dark_grey"
+                        android:background="@color/transparent"
+                        android:drawablePadding="10dp"
+                        android:drawableStart="@drawable/inr_sympol"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvEnterAmount"
+                        app:strokeColor="@color/light_grey"
+                        app:strokeWidth="2dp"
+                        android:hint="Enter amount"
+                        app:layout_constraintStart_toStartOf="parent"/>
+                </com.google.android.material.card.MaterialCardView>
+
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/uiCvStatus"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uiMcvEnterAmount">
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/uiTvOnlyEnterAmount"
+                        android:text="Rupees Two Hundred only"
+                        android:textColor="@color/grey"
+                        android:layout_marginTop="5dp"
+                        android:textSize="12sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"/>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uiMCvOneHundred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvOnlyEnterAmount"
+                        app:strokeColor="@color/grey_10"
+                        app:strokeWidth="2dp">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvOneHundred"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:drawableStart="@drawable/inr_sympol"
+                            android:layout_marginEnd="16dp"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:text="100"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uiMcvFiveHundred"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="20dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintStart_toEndOf="@+id/uiMCvOneHundred"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvOnlyEnterAmount"
+                        app:strokeColor="@color/grey_10"
+                        app:strokeWidth="2dp">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvFiveHundred"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:drawableStart="@drawable/inr_sympol"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:text="500"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uiMcvOneThousand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_marginStart="20dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintStart_toEndOf="@+id/uiMcvFiveHundred"
+                        app:layout_constraintTop_toBottomOf="@+id/uiTvOnlyEnterAmount"
+                        app:strokeColor="@color/grey_10"
+                        app:strokeWidth="2dp">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvvOneThousand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:drawableStart="@drawable/inr_sympol"
+                            android:layout_marginEnd="16dp"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:text="1000"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                    <com.google.android.material.card.MaterialCardView
+                        android:id="@+id/uiMcvTwoThousand"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        app:cardBackgroundColor="@color/white"
+                        app:cardCornerRadius="50dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/uiMCvOneHundred"
+                        app:strokeColor="@color/grey_10"
+                        app:strokeWidth="2dp">
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/uiTvTwoThousand"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:layout_marginEnd="16dp"
+                            android:drawableStart="@drawable/inr_sympol"
+                            android:enabled="false"
+                            android:gravity="center"
+                            android:text="2000"
+                            android:textColor="@color/grey"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </com.google.android.material.card.MaterialCardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uiCvProceedPayment"
+        android:layout_margin="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_green"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uiTvProceedPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Proceed Payment"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

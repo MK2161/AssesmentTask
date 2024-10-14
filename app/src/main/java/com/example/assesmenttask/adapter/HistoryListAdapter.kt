@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.appcompat.widget.AppCompatTextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.assesmenttask.R
@@ -14,6 +15,7 @@ import com.example.assesmenttask.data.model.UserDetails
 class HistoryListAdapter(
     private val userDetails: MutableList<UserDetails?>,
     private val context: Context,
+    private val onHistoryClicked : () -> Unit,
 ) : RecyclerView.Adapter<HistoryListAdapter.HistoryListViewHolder>() {
 
 
@@ -34,11 +36,15 @@ class HistoryListAdapter(
             .load(userDetail?.avatarUrl)
             .into(holder.uiIvImages)
         holder.uiTvName.text = userDetail?.login
+        holder.uiIvCvHistoryCard.setOnClickListener {
+            onHistoryClicked()
+        }
     }
 
 
     inner class HistoryListViewHolder(view : View) : RecyclerView.ViewHolder(view){
         var uiTvName: AppCompatTextView = view.findViewById(R.id.uiTvName)
         val uiIvImages: AppCompatImageView = view.findViewById(R.id.uiIvImages)
+        val uiIvCvHistoryCard: ConstraintLayout = view.findViewById(R.id.uiCvHistoryItem)
     }
 }

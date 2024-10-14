@@ -74,3 +74,38 @@ private fun showDatePickerDialog(
 
     datePickerDialog.show()
 }
+
+fun convertNumberToWords(num: Int): String {
+    if (num == 0 || num > 10000) return ""
+
+    val underTwenty = arrayOf(
+        "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten", "Eleven",
+        "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+    )
+
+    val tens = arrayOf(
+        "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+    )
+
+    var result = ""
+
+    if (num >= 1000) {
+        result += underTwenty[num / 1000] + " Thousand "
+    }
+
+    if ((num % 1000) >= 100) {
+        result += underTwenty[(num % 1000) / 100] + " Hundred "
+    }
+
+    val remainder = num % 100
+    if (remainder < 20) {
+        result += underTwenty[remainder]
+    } else {
+        result += tens[remainder / 10]
+        if (remainder % 10 != 0) {
+            result += "-" + underTwenty[remainder % 10]
+        }
+    }
+
+    return result.trim()
+}
