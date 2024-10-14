@@ -19,7 +19,6 @@ class HistoryActivity : AppCompatActivity() {
         setUpUi()
         binding?.uiIvFilter?.setOnClickListener {
             showFaceBottomSheetDialog(
-                onClickAction = {},
                 context = this
             )
         }

@@ -12,7 +12,6 @@ import com.google.android.material.card.MaterialCardView
 import java.util.Calendar
 
 fun Context.showFaceBottomSheetDialog(
-    onClickAction: () -> Unit,
     context: Context
 ) {
     val bottomSheet = LayoutInflater.from(this).inflate(R.layout.filter_history_screen, null)
