@@ -6,6 +6,6 @@
     </style>
 
     <style name="Theme.AssesmentTask" parent="Base.Theme.AssesmentTask">
-        <item name="android:windowBackground">@color/orange</item>
+        <item name="android:windowBackground">@color/dark_green</item>
     </style>
 </resources>

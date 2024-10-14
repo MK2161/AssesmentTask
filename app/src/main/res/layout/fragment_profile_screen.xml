@@ -89,7 +89,6 @@
                         android:layout_width="24dp"
                         android:layout_height="wrap_content"
                         android:src="@drawable/ic_copy"
-                        android:tint="@color/grey"
                         android:padding="4dp"
                         android:layout_marginTop="4dp"
                         app:layout_constraintStart_toEndOf="@id/uiTvPersonalUpi"
@@ -557,6 +556,7 @@
                                 android:layout_width="250dp"
                                 android:layout_height="190dp"
                                 android:layout_margin="14dp"
+                                android:background="@drawable/dashed_border"
                                 app:cardCornerRadius="8dp"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toBottomOf="@+id/uiTvWallet">
@@ -696,8 +696,8 @@
 
                             <androidx.appcompat.widget.AppCompatImageView
                                 android:id="@+id/uiIvToggle"
-                                android:layout_width="40dp"
-                                android:layout_height="30dp"
+                                android:layout_width="35dp"
+                                android:layout_height="25dp"
                                 android:contentDescription="@string/basic_image"
                                 android:scaleType="centerCrop"
                                 android:src="@drawable/ic_toggle"
