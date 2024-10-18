@@ -20,7 +20,9 @@
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/dark_grey"
-            android:text="State Bank of India"/>
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/str_state_bank_of_india"/>
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
@@ -29,6 +31,8 @@
             app:layout_constraintTop_toBottomOf="@+id/uiTvSbiName"
             app:layout_constraintStart_toStartOf="parent"
             android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             android:text="xxxx4989"/>
 
         <androidx.appcompat.widget.AppCompatImageView
@@ -44,19 +48,23 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/uiCvToBankDetails"
         android:layout_width="match_parent"
-        android:background="#F5F5F5"
+        android:background="@color/light_grey5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uiCvTopBar"
-        android:layout_margin="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="15dp"
         android:layout_height="wrap_content">
 
         <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/uiTvTo"
+            android:layout_margin="15dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            android:textColor="@color/dark_grey"
+            android:textColor="@color/grey"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             android:text="To"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -65,7 +73,13 @@
             android:id="@+id/uiTvSending"
             app:layout_constraintTop_toBottomOf="@+id/uiTvTo"
             app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:textColor="@color/grey"
+            android:layout_marginStart="15dp"
+            android:textSize="12sp"
+            android:layout_marginTop="6dp"
+            android:layout_marginBottom="6dp"
+            android:fontFamily="@font/gilroy_medium"
             android:text="xxxx4989"/>
 
         <androidx.appcompat.widget.AppCompatTextView
@@ -74,7 +88,8 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="@+id/uiTvTo"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="6dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/gilroy_medium"
             android:text="QPAY"
             android:textStyle="bold"
             android:textSize="12sp"
@@ -84,9 +99,11 @@
             android:layout_height="wrap_content"
             app:layout_constraintTop_toBottomOf="@+id/uiTvQpay"
             app:layout_constraintEnd_toEndOf="parent"
-            android:layout_margin="6dp"
+            app:layout_constraintBottom_toBottomOf="@+id/uiTvSending"
+            android:layout_marginEnd="15dp"
             android:drawablePadding="6dp"
             android:text="₹10,023"
+            android:layout_marginTop="6dp"
             android:drawableEnd="@drawable/ic_bottom_bar"
             android:textStyle="bold"
             android:textSize="12sp"
@@ -101,6 +118,7 @@
         android:id="@+id/uiTvUpiPin"
         android:text="ENTER 6-DIGIT UPI PIN"
         android:textSize="14sp"
+        android:fontFamily="@font/gilroy_semibold"
         android:textColor="@color/dark_grey"
         android:textStyle="bold"
         android:layout_margin="25dp"
@@ -119,7 +137,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_height="wrap_content">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:gravity="center"
@@ -136,9 +154,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtOne"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 />
             <EditText
                 android:layout_width="40dp"
@@ -152,9 +170,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtTwo"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 />
             <EditText
                 android:layout_width="40dp"
@@ -168,9 +186,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtThree"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 />
             <EditText
                 android:layout_width="40dp"
@@ -184,9 +202,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtFour"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 /><EditText
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
@@ -199,9 +217,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtFive"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 />
             <EditText
                 android:layout_width="40dp"
@@ -215,9 +233,9 @@
                 android:inputType="numberDecimal"
                 android:gravity="center"
                 android:id="@+id/uiEtSix"
-                android:textStyle="bold"
-                android:textSize="14sp"
-                android:textColor="@color/black"
+                android:fontFamily="@font/gilroy_bold"
+                android:textSize="20sp"
+                android:textColor="@color/dark_grey"
                 android:hint=""
                 />
         </LinearLayout>
@@ -228,10 +246,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/uiMcvSendLink"
-        android:layout_margin="50dp"
         app:cardBackgroundColor="#FFE395"
         app:cardCornerRadius="40dp"
-        app:layout_constraintTop_toBottomOf="@+id/frameLayout"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -243,8 +261,8 @@
 
             <androidx.appcompat.widget.AppCompatImageView
                 android:id="@+id/uiIvInfoIcons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
                 android:layout_margin = "6dp"
                 android:src="@drawable/info_icons"
                 app:layout_constraintStart_toStartOf="parent"
@@ -260,7 +278,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                android:text="You are transferring money from your  State \n Bank of India account to Qpay"/>
+                android:text="You are transferring money from your  State \n Bank of India account to Qpay"
+                android:textSize="12sp"
+                android:fontFamily="@font/gilroy_medium"
+                android:textColor="@color/light_black"/>
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </com.google.android.material.card.MaterialCardView>

@@ -18,9 +18,6 @@ class SendMoneyActivity : AppCompatActivity() {
         binding = SendMoneyDetailsScreenBinding.inflate(layoutInflater)
         setContentView(binding?.root)
         setUpUi()
-
-
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -45,20 +42,15 @@ class SendMoneyActivity : AppCompatActivity() {
         }
         binding?.uiEtEnterAmount?.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-                // No action needed before the text changes
+
             }
 
             override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                // No action needed during the text change
             }
 
             override fun afterTextChanged(s: Editable?) {
-                // Get the current text from the EditText
                 val amountString = s.toString()
-                // Convert the text to an Int, default to 0 if invalid
                 val amount = amountString.toIntOrNull() ?: 0
-
-                // Convert the amount to words and set it in the TextView
                 binding?.uiTvOnlyEnterAmount?.text = "Rupees ${convertNumberToWords(amount)} only"
             }
         })

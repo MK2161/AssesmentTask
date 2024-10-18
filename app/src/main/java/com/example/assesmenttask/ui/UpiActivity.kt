@@ -1,13 +1,25 @@
 package com.example.assesmenttask.ui
 
+import android.Manifest
+import android.annotation.SuppressLint
+import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.telephony.SubscriptionManager
+import android.telephony.TelephonyManager
+import android.util.Log
 import android.view.KeyEvent
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import androidx.core.widget.addTextChangedListener
 import com.example.assesmenttask.databinding.UpiScreenBinding
+import com.example.assesmenttask.ui.profile.AddAccountActivity
 
 class UpiActivity : AppCompatActivity() {
 
@@ -35,7 +47,11 @@ class UpiActivity : AppCompatActivity() {
         setTextChangeListener(fromEditText = binding?.uiEtFour, targetEditText = binding?.uiEtFive)
         setTextChangeListener(fromEditText = binding?.uiEtFive, targetEditText = binding?.uiEtSix)
         setTextChangeListener(fromEditText = binding?.uiEtSix, done = {
-            Toast.makeText(this,"successfulll",Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, AddAccountActivity :: class.java)
+            startActivity(intent)
+            reset()
+
+
         })
 
         setKeyListener(fromEditText = binding?.uiEtTwo, backToEditText = binding?.uiEtOne)
@@ -100,10 +116,10 @@ class UpiActivity : AppCompatActivity() {
     }
 
     private fun setKeyListener(fromEditText: EditText?,backToEditText: EditText?){
-        fromEditText?.setOnKeyListener{ _,_,event ->
+        fromEditText?.setOnKeyListener{ _,keyCode,event ->
 
 
-            if (null != event && KeyEvent.KEYCODE_DEL == event.keyCode){
+            if (keyCode == KeyEvent.KEYCODE_DEL && event.action == KeyEvent.ACTION_DOWN && fromEditText.text.isEmpty()){
                 backToEditText?.isEnabled = true
                 backToEditText?.requestFocus()
                 backToEditText?.setText("")
@@ -117,3 +133,72 @@ class UpiActivity : AppCompatActivity() {
         }
     }
 }
+
+
+
+
+//media store concept
+
+/*
+private fun takeScreenshot(): Bitmap {
+    val rootView: View = window.decorView.rootView
+    val screenshot = Bitmap.createBitmap(rootView.width, rootView.height, Bitmap.Config.ARGB_8888)
+    val canvas = Canvas(screenshot)
+    rootView.draw(canvas)
+    return screenshot
+}*/
+
+
+/*private fun saveScreenshotToMediaStore(bitmap: Bitmap): Uri? {
+    val contentValues = ContentValues().apply {
+        put(MediaStore.Images.Media.DISPLAY_NAME, "screenshot_${System.currentTimeMillis()}.png")
+        put(MediaStore.Images.Media.MIME_TYPE, "image/png")
+        put(MediaStore.Images.Media.DATE_ADDED, System.currentTimeMillis() / 1000)
+        put(MediaStore.Images.Media.RELATIVE_PATH, Environment.DIRECTORY_PICTURES + "/Screenshots")
+    }
+
+    val resolver = contentResolver
+    val uri: Uri? = resolver.insert(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, contentValues)
+
+    uri?.let {
+        try {
+            val outputStream = resolver.openOutputStream(it)
+            bitmap.compress(Bitmap.CompressFormat.PNG, 100, outputStream)
+            outputStream?.flush()
+            outputStream?.close()
+        } catch (e: IOException) {
+            e.printStackTrace()
+            return null
+        }
+    }
+
+    return uri
+}*/
+
+/*private fun shareScreenshot(uri: Uri) {
+    val intent = Intent(Intent.ACTION_SEND).apply {
+        type = "image/png"
+        putExtra(Intent.EXTRA_STREAM, uri)
+        addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)  // Grant permission to other apps to read the URI
+    }
+
+    startActivity(Intent.createChooser(intent, "Share Screenshot"))
+}*/
+
+/*private fun takeScreenshotAndShare() {
+    val bitmap = takeScreenshot()
+    val uri = saveScreenshotToMediaStore(bitmap)
+
+    if (uri != null) {
+        shareScreenshot(uri)
+    } else {
+        Toast.makeText(this, "Failed to save screenshot", Toast.LENGTH_SHORT).show()
+    }
+}*/
+/*
+val screenshotButton: Button = findViewById(R.id.screenshotButton)
+screenshotButton.setOnClickListener {
+    takeScreenshotAndShare()
+}*/
+
+

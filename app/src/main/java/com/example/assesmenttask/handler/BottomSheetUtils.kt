@@ -76,6 +76,60 @@ private fun showDatePickerDialog(
 }
 
 fun convertNumberToWords(num: Int): String {
+    if (num < 0 || num > 100000000) return ""
+
+    val underTwenty = arrayOf(
+        "", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine", "Ten",
+        "Eleven", "Twelve", "Thirteen", "Fourteen", "Fifteen", "Sixteen", "Seventeen", "Eighteen", "Nineteen"
+    )
+
+    val tens = arrayOf(
+        "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+    )
+
+    var result = ""
+    var number = num
+
+
+    if (number >= 10000000) {
+        result += convertNumberToWords(number / 10000000) + " Crore "
+        number %= 10000000
+    }
+
+
+    if (number >= 100000) {
+        result += convertNumberToWords(number / 100000) + " Lakh "
+        number %= 100000
+    }
+
+
+    if (number >= 1000) {
+        result += convertNumberToWords(number / 1000) + " Thousand "
+        number %= 1000
+    }
+
+
+    if (number >= 100) {
+        result += underTwenty[number / 100] + " Hundred "
+        number %= 100
+    }
+
+
+    if (number < 20) {
+        result += underTwenty[number]
+    } else {
+        result += tens[number / 10]
+        if (number % 10 != 0) {
+            result += "-" + underTwenty[number % 10]
+        }
+    }
+
+    return result.trim()
+}
+
+
+
+/*fun convertNumberToWords(num: Int): String {
     if (num == 0 || num > 10000) return ""
 
     val underTwenty = arrayOf(
@@ -108,4 +162,4 @@ fun convertNumberToWords(num: Int): String {
     }
 
     return result.trim()
-}
+}*/

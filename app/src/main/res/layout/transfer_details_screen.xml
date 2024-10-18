@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiIvBackArrow"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_back_arrow"/>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/uiMcvTransferDetails"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:cardBackgroundColor="@color/white"
+            android:layout_margin="20dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/light_grey10"
+            app:layout_constraintTop_toBottomOf="@+id/uiIvBackArrow"
+            app:layout_constraintStart_toStartOf="parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:backgroundTint="@color/white"
+                android:id="@+id/uiCvHistoryItem"
+                android:layout_margin="20dp">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uiTvPaidTo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:layout_constraintTop_toTopOf="parent"
+                    android:text="@string/str_paid_to"
+                    android:textColor="@color/grey"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/gilroy_medium"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/uiCvImage"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    app:cardCornerRadius="50dp"
+                    app:cardElevation="0dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvPaidTo">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/uiIvImages"
+                        android:layout_width="55dp"
+                        android:layout_height="55dp"
+                        android:contentDescription="@string/basic_image"
+                        android:scaleType="centerCrop"
+                        android:src="@drawable/basic" />
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uiTvAccountantName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/str_ibrahim_mohammedali"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                    app:layout_constraintTop_toTopOf="@+id/uiCvImage" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uiTvAccountantUpiId"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="6dp"
+                    android:text="@string/str_8778214386_qpay"
+                    android:textColor="#999999"
+                    android:textSize="12sp"
+                    android:fontFamily="@font/gilroy_medium"
+                    app:layout_constraintBottom_toBottomOf="@+id/uiCvImage"
+                    app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvAccountantName" />
+
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uiTvTransactionsAmount"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawablePadding="10dp"
+                    android:text="₹10,023"
+                    app:iconSize="10dp"
+                    android:textColor="@color/dark_grey"
+                    android:textSize="14sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvAccountantName" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/uiTvDateAndTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12 september, 2024 at 04:00 PM"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/uiCvImage"
+                    app:layout_constraintTop_toBottomOf="@+id/uiCvImage"/>
+                <View
+                    android:id="@+id/uiViewBottomDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:background="@color/light_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/uiTvTransferDetails"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvDateAndTime" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvTransferDetails"
+                    android:text="Transfer details"
+                    app:layout_constraintTop_toBottomOf="@+id/uiViewBottomDivider"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey"
+                    android:layout_marginTop="12dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiIvMenu"
+                    android:src="@drawable/ic_round_menu"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvTransferDetails"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvTransactionID"
+                    android:text="Transaction ID"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toEndOf="@+id/uiIvMenu"
+                    app:layout_constraintTop_toTopOf="@+id/uiIvMenu"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvTransactionNumber"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="T2409121600359998490964"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:textColor="@color/dark_grey"
+                    app:layout_constraintStart_toEndOf="@+id/uiIvMenu"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvTransactionID"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:id="@+id/uiIvCopy"
+                    android:src="@drawable/ic_copy"
+                    app:tint="@color/dark_green"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvTransferDetails"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <View
+                    android:id="@+id/uiViewBottomDivider1"
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@color/light_grey"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toTopOf="@+id/uiIvSbi"
+                    app:layout_constraintTop_toBottomOf="@+id/uiIvMenu" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvDebitedFrom"
+                    android:text="Debited from"
+                    app:layout_constraintTop_toBottomOf="@+id/uiViewBottomDivider1"
+                    app:layout_constraintStart_toStartOf="parent"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:textSize="12sp"
+                    android:textColor="@color/grey"
+                    android:layout_marginTop="12dp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiIvSbi"
+                    android:src="@drawable/ic_round_sbi"
+                    android:layout_marginTop="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvDebitedFrom"
+                    app:layout_constraintStart_toStartOf="parent"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvSbiCardNo"
+                    android:text="xxxxxxxxxxxx3941"
+                    android:textSize="12sp"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/grey"
+                    app:layout_constraintStart_toEndOf="@+id/uiIvSbi"
+                    app:layout_constraintTop_toTopOf="@+id/uiIvSbi"/>
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uiTvUtrNo"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="4dp"
+                    android:text="UTR: 462204118390"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/gilroy_semibold"
+                    android:textColor="@color/dark_grey"
+                    app:layout_constraintStart_toEndOf="@+id/uiIvSbi"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvSbiCardNo"/>
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:layout_width="14dp"
+                    android:layout_height="14dp"
+                    android:id="@+id/uiIvSbiNoCopy"
+                    android:src="@drawable/ic_copy"
+                    app:tint="@color/dark_green"
+                    android:layout_marginTop="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/uiTvDebitedFrom"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uiBtnViewHistory"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/light_grey5"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="View History"
+                    android:layout_marginTop="10dp"
+                    app:icon="@drawable/ic_history_picture"
+                    app:iconGravity="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_green"
+                    android:textSize="12sp"
+                    app:cornerRadius="8dp"
+                    app:iconTint="@color/color_green"
+                    app:strokeColor="@color/light_grey5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@+id/uiBtnShareReceipt"
+                    app:layout_constraintTop_toBottomOf="@+id/uiIvSbi"
+                    />
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/uiBtnShareReceipt"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:backgroundTint="@color/light_grey5"
+                    android:fontFamily="@font/gilroy_medium"
+                    android:text="@string/str_share_receipt"
+                    android:drawablePadding="6dp"
+                    android:layout_marginTop="10dp"
+                    app:icon="@drawable/ic_share_receipt"
+                    app:iconGravity="textStart"
+                    android:textAllCaps="false"
+                    android:textColor="@color/color_green"
+                    app:drawableTint="@color/color_green"
+                    android:textSize="12sp"
+                    app:cornerRadius="8dp"
+                    app:iconTint="@color/color_green"
+                    app:strokeColor="@color/light_grey5"
+                    app:layout_constraintTop_toBottomOf="@+id/uiIvSbi"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/uiBtnViewHistory"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="needHelp?"
+        android:id="@+id/uiTvNeedHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginEnd="65dp"
+        android:layout_marginBottom="50dp"/>
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uiIvWhatsappLogo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:layout_marginEnd="2dp"
+        app:layout_constraintStart_toEndOf="@+id/uiTvNeedHelp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/ic_whatsapp_logo"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

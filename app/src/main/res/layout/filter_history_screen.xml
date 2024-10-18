@@ -13,10 +13,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="20dp"
-        android:text="Filter payments"
+        android:text="@string/str_filter_payments"
         android:textColor="@color/dark_grey"
         android:textSize="20sp"
-        android:textStyle="bold"
+        android:fontFamily="@font/gilroy_bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,7 +33,7 @@
         android:id="@+id/uiCvPaymentSection"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uiTvFilterPayments">
 
@@ -41,25 +41,88 @@
             android:id="@+id/uiTvPaymentSource"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Payment source"
+            android:text="@string/str_payment_source"
             android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/uiRvHistoryDetails"
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupPaymentSource"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:visibility="visible"
-            app:layoutManager="androidx.recyclerview.widget.StaggeredGridLayoutManager"
+            android:layout_marginTop="12dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/uiTvPaymentSource"
-            tools:itemCount="1"
-            tools:listitem="@layout/layout_payment_source"></androidx.recyclerview.widget.RecyclerView>
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipQpayLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:chipIcon="@drawable/ic_qpay_wallet"
+                android:text="@string/str_qpay_wallet"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipUnitedBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_united_bank_of_india_5221"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipIcon="@drawable/ic_united_bank"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipSbi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_sbi_3941"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipIcon="@drawable/ic_sbi"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipBankOfBaroda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_bank_of_baroda_4989"
+                android:textColor="@color/grey"
+                app:chipIcon="@drawable/ic_bank_of_baroda"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+        </com.google.android.material.chip.ChipGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -67,7 +130,7 @@
         android:id="@+id/uiCvStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uiCvPaymentSection">
 
@@ -75,10 +138,10 @@
             android:id="@+id/uiTvStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Status"
+            android:text="@string/str_status"
             android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -86,7 +149,7 @@
             android:id="@+id/uiMcvSuccessfulStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -97,16 +160,16 @@
                 android:id="@+id/uiTvSuccessful"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Successful"
+                android:text="@string/str_successful"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -114,8 +177,8 @@
             android:id="@+id/uiMcvFailedStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
             app:layout_constraintStart_toEndOf="@+id/uiMcvSuccessfulStatus"
@@ -126,16 +189,16 @@
                 android:id="@+id/uiTvFailed"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Failed"
+                android:text="@string/str_failed"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -143,8 +206,8 @@
             android:id="@+id/uiMcvPendingStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
             app:layout_constraintStart_toEndOf="@+id/uiMcvFailedStatus"
@@ -155,16 +218,16 @@
                 android:id="@+id/uiTvPending"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Pending"
+                android:text="@string/str_pending"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -174,7 +237,7 @@
         android:id="@+id/uiCvType"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="20dp"
+        android:layout_margin="16dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uiCvStatus">
 
@@ -182,10 +245,10 @@
             android:id="@+id/uiTvType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Type"
+            android:text="@string/str_type"
             android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -193,9 +256,10 @@
             android:id="@+id/uiMcvPaid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/uiTvType"
             app:strokeColor="@color/grey_10"
@@ -204,16 +268,16 @@
                 android:id="@+id/uiTvPaid"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Paid"
+                android:text="@string/str_paid"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -221,10 +285,11 @@
             android:id="@+id/uiMcvReceivedType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/uiMcvPaid"
             app:layout_constraintTop_toBottomOf="@+id/uiTvType"
             app:strokeColor="@color/grey_10"
@@ -233,16 +298,16 @@
                 android:id="@+id/uiTvReceived"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Received"
+                android:text="@string/str_received"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -250,10 +315,11 @@
             android:id="@+id/uiMcvPendingType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
+            app:layout_constraintHorizontal_chainStyle="spread"
             app:layout_constraintStart_toEndOf="@+id/uiMcvReceivedType"
             app:layout_constraintTop_toBottomOf="@+id/uiTvType"
             app:strokeColor="@color/grey_10"
@@ -262,16 +328,16 @@
                 android:id="@+id/uiTvPendingType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="Pending"
+                android:text="@string/str_pending"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -279,11 +345,13 @@
             android:id="@+id/uiMcvSelfTransferType"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="50dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/uiMcvPaid"
+            app:layout_constraintHorizontal_chainStyle="spread"
+            app:layout_constraintStart_toEndOf="@+id/uiMcvPendingType"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvType"
             app:strokeColor="@color/grey_10"
             app:strokeWidth="2dp">
 
@@ -291,16 +359,16 @@
                 android:id="@+id/uiTvSelfTransferType"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="12dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="12dp"
                 android:layout_marginBottom="8dp"
                 android:enabled="false"
                 android:gravity="center"
-                android:text="SelfTransfer"
+                android:text="@string/str_self_transfer"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -318,10 +386,10 @@
             android:id="@+id/uiTvAmount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Amount"
+            android:text="@string/str_name_amount"
             android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -329,7 +397,7 @@
             android:id="@+id/uiMcvMinAmount"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -337,19 +405,22 @@
             app:layout_constraintTop_toBottomOf="@+id/uiTvAmount"
             app:strokeColor="@color/grey_10"
             app:strokeWidth="2dp">
-            <androidx.appcompat.widget.AppCompatEditText
+            <EditText
                 android:id="@+id/uiEtMinAmount"
-                android:layout_width="wrap_content"
-                android:layout_height="48dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="16dp"
-                android:enabled="false"
+                android:autofillHints=""
                 android:drawableStart="@drawable/inr_sympol"
                 android:background="@color/transparent"
-                android:text="Min Amount"
+                android:hint="@string/str_min_amount"
+                android:inputType="number"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -357,8 +428,8 @@
             android:id="@+id/uiMcvMaxAmount"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toEndOf="@+id/uiMcvMinAmount"
@@ -366,19 +437,22 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:strokeColor="@color/grey_10"
             app:strokeWidth="2dp">
-            <androidx.appcompat.widget.AppCompatEditText
+            <EditText
                 android:id="@+id/uiEtMaxAmount"
                 android:layout_width="match_parent"
-                android:layout_height="48dp"
+                android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="16dp"
-                android:enabled="false"
+                android:autofillHints=""
                 android:drawableStart="@drawable/inr_sympol"
                 android:background="@color/transparent"
-                android:text="MaxAmount"
+                android:hint="@string/str_max_amount"
+                android:inputType="number"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -397,10 +471,10 @@
             android:id="@+id/uiTvDateRange"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Date range"
+            android:text="@string/str_date_range"
             android:textColor="@color/dark_grey"
-            android:textSize="14sp"
-            android:textStyle="bold"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -408,7 +482,7 @@
             android:id="@+id/uiMcvFromDate"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toStartOf="parent"
@@ -421,16 +495,16 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="16dp"
                 android:enabled="false"
                 android:drawableEnd="@drawable/ic_calendar"
                 android:background="@color/transparent"
-                android:text="From"
+                android:text="@string/str_from"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
@@ -438,8 +512,8 @@
             android:id="@+id/uiMcvToDate"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             app:cardBackgroundColor="@color/white"
             app:cardCornerRadius="8dp"
             app:layout_constraintStart_toEndOf="@+id/uiMcvFromDate"
@@ -452,139 +526,89 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
                 android:layout_marginEnd="16dp"
                 android:enabled="false"
                 android:drawableEnd="@drawable/ic_calendar"
                 android:background="@color/transparent"
-                android:text="To"
+                android:text="@string/str_to"
                 android:textColor="@color/grey"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:fontFamily="@font/gilroy_medium" />
 
         </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/uiMcvLastOneMonth"
-            android:layout_width="0dp"
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="50dp"
-            app:layout_constraintEnd_toStartOf="@+id/uiMcvLastThreeMonth"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/uiMcvFromDate"
-            app:strokeColor="@color/grey_10"
-            app:strokeWidth="2dp">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/uiTvLastOneMonth"
-                android:layout_width="match_parent"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast1Month"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="Last 1 Month"
-                android:textColor="@color/grey"
+                android:checked="true"
+                android:text="@string/str_last_1_month"
+                android:fontFamily="@font/gilroy_medium"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/uiMcvLastThreeMonth"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            android:layout_marginStart="20dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="50dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/uiMcvLastOneMonth"
-            app:layout_constraintTop_toBottomOf="@+id/uiMcvFromDate"
-            app:strokeColor="@color/grey_10"
-            app:strokeWidth="2dp">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/uiTvLastThreeMonth"
-                android:layout_width="match_parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast3Months"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="Last 3 Months"
+                android:text="@string/str_last_3_months"
                 android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
 
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/uiMcvLastSixMonth"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="50dp"
-            app:layout_constraintEnd_toStartOf="@+id/uiMcvLastOneYear"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/uiMcvLastOneMonth"
-            app:strokeColor="@color/grey_10"
-            app:strokeWidth="2dp">
-
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/uiTvLastSixMonth"
-                android:layout_width="match_parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast6Months"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:layout_marginBottom="8dp"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="Last 6 Month"
-                android:textColor="@color/grey"
+                android:text="@string/str_last_6_months"
+                android:fontFamily="@font/gilroy_medium"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
 
-        </com.google.android.material.card.MaterialCardView>
 
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/uiMcvLastOneYear"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
-            app:cardBackgroundColor="@color/white"
-            app:cardCornerRadius="50dp"
-            android:layout_marginStart="20dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/uiMcvLastSixMonth"
-            app:layout_constraintTop_toBottomOf="@+id/uiMcvLastOneMonth"
-            app:strokeColor="@color/grey_10"
-            app:strokeWidth="2dp">
-            <androidx.appcompat.widget.AppCompatTextView
-                android:id="@+id/uiTvLastOneYear"
-                android:layout_width="match_parent"
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast1Year"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginEnd="16dp"
-                android:enabled="false"
-                android:gravity="center"
-                android:text="Last 1 Year"
+                android:text="@string/str_last_1_year"
                 android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
                 android:textSize="12sp"
-                android:textStyle="bold" />
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
 
-        </com.google.android.material.card.MaterialCardView>
-
+        </com.google.android.material.chip.ChipGroup>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -605,7 +629,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="@color/white"
             android:fontFamily="sans-serif-medium"
-            android:text="Clear all"
+            android:text="@string/str_clear_all"
             android:textAllCaps="false"
             android:textColor="@color/dark_green"
             android:textSize="14sp"
@@ -627,7 +651,7 @@
             android:layout_marginStart="20dp"
             android:backgroundTint="@color/dark_green"
             android:fontFamily="sans-serif-medium"
-            android:text="Apply"
+            android:text="@string/str_apply"
             android:textAllCaps="false"
             android:textColor="@color/white"
             android:textSize="14sp"

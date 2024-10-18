@@ -1,0 +1,19 @@
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Background color for unselected state -->
+    <item android:id="@android:id/background">
+        <shape android:shape="oval">
+            <solid android:color="@color/dark_grey" /> <!-- Unselected color -->
+        </shape>
+    </item>
+
+    <!-- Progress color for selected state -->
+    <item android:id="@android:id/progress">
+        <clip>
+            <shape android:shape="oval">
+                <solid android:color="@color/color_green" /> <!-- Selected color -->
+            </shape>
+        </clip>
+    </item>
+
+</layer-list>

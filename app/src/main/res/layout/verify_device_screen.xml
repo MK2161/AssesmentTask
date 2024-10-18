@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginVertical="16dp"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uiIvBackArrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_back_arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uiTvVerifyDevice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gilroy_bold"
+        android:text="VerifyDevice"
+        android:textColor="@color/dark_grey"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/uiIvBackArrow"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uiIvBackArrow" />
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/uiMcvSimCardDetails"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="20dp"
+        app:cardCornerRadius="1dp"
+        android:layout_marginBottom="20dp"
+        app:cardBackgroundColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uiTvVerifyDevice"
+        app:strokeColor="@color/grey_10"
+        app:strokeWidth="1dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/uiCvSimCard"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvChooseSim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="Choose SIM linked to"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvPhoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:fontFamily="@font/gilroy_semibold"
+                android:text="+91 87782 14386"
+                android:textColor="@color/dark_grey"
+                android:textSize="14sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvChooseSim" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvSimSlot1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_sim_slot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvPhoneNumber" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvSim1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="SIM 1"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/uiIvSimSlot1"
+                app:layout_constraintTop_toTopOf="@+id/uiIvSimSlot1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvPhoneNumber1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="098765 43210"
+                android:textColor="@color/dark_grey"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/uiIvSimSlot1"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvSim1" />
+
+            <CheckBox
+                android:id="@+id/roundCheckBox1"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:button="@android:color/transparent"
+                android:checked="true"
+                android:background="@drawable/round_check_box"
+                app:layout_constraintBottom_toBottomOf="@+id/uiIvSimSlot1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/uiIvSimSlot1" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvSimSlot2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:src="@drawable/ic_sim_slot"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/uiIvSimSlot1" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvSim2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="SIM 1"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/uiIvSimSlot2"
+                app:layout_constraintTop_toTopOf="@+id/uiIvSimSlot2" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvPhoneNumber2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="2dp"
+                android:fontFamily="@font/gilroy_medium"
+                android:text="098765 43210"
+                android:textColor="@color/dark_grey"
+                android:textSize="14sp"
+                app:layout_constraintStart_toEndOf="@+id/uiIvSimSlot2"
+                app:layout_constraintTop_toBottomOf="@+id/uiTvSim2" />
+
+            <CheckBox
+                android:id="@+id/roundCheckBox2"
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:button="@android:color/transparent"
+                android:background="@drawable/round_check_box"
+                android:checked="false"
+                app:layout_constraintBottom_toBottomOf="@+id/uiIvSimSlot2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/uiIvSimSlot2" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_bottom_radius"
+        android:backgroundTint="@color/light_orange"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginStart="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/uiMcvSimCardDetails">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            android:text="Standard SMS charges may apply"
+            android:textSize="12sp"
+            android:textColor="@color/white"
+            android:fontFamily="@font/gilroy_medium"
+            android:drawableStart="@drawable/ic_warnings"
+            android:drawablePadding="2dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uiTvDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:fontFamily="@font/gilroy_medium"
+        android:text="We’re creating multiple UPI IDs to ensure seamless payments even during bank server failures. You may receive the same update from your bank."
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toTopOf="@+id/uiCvSendSms"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uiCvSendSms"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="bottom"
+        android:layout_margin="16dp"
+        android:layout_marginTop="50dp"
+        android:background="?android:attr/windowBackground"
+        android:backgroundTint="@color/color_green"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uiTvProceedPayment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:text="Send SMS"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

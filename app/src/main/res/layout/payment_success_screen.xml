@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_marginVertical="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiIvBackArrow"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_back_arrow"/>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uiCvProfileView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@+id/uiIvBackArrow"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.cardview.widget.CardView
+            android:id="@+id/uiCvImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            app:cardCornerRadius="50dp"
+            app:cardElevation="0dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            >
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvImages"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:contentDescription="@string/basic_image"
+                android:scaleType="centerCrop"
+                android:src="@drawable/basic" />
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvSenderName"
+            android:text="@string/str_ibrahim_mohammedali"
+            android:textSize="14sp"
+            android:layout_margin="6dp"
+            android:drawableEnd="@drawable/ic_green_tick"
+            android:drawablePadding="4dp"
+            android:textColor="@color/dark_grey"
+            android:fontFamily="@font/gilroy_semibold"
+            app:layout_constraintTop_toBottomOf="@+id/uiCvImage"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvSenderUpiId"
+            android:text = "@string/str_8778214386_qpay"
+            android:layout_marginTop="4dp"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
+            android:textColor="@color/grey"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvSenderName"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvAmount"
+            android:text="@string/str_amount"
+            android:textSize="32sp"
+            android:drawableStart="@drawable/inr_sympol_big_size"
+            android:textColor="@color/dark_grey"
+            android:fontFamily="@font/gilroy_bold"
+            app:drawableTint="@color/dark_grey"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvSenderUpiId"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvPaymentSuccessFull"
+            android:text="Payment successful"
+            android:textSize="14sp"
+            android:textColor="@color/dark_grey"
+            android:fontFamily="@font/gilroy_semibold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvAmount"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/uiTvDateAndTime"
+            android:text="12 september, 2024 at 04:00 PM"
+            android:textSize="14sp"
+            android:textColor="@color/grey"
+            android:fontFamily="@font/gilroy_semibold"
+            android:layout_marginTop="12dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvPaymentSuccessFull"/>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uiBtnViewDetails"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/light_grey5"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/str_view_details"
+            android:layout_margin="10dp"
+            app:icon="@drawable/ic_view_details"
+            app:iconGravity="textStart"
+            android:drawablePadding="6dp"
+            android:textAllCaps="false"
+            android:textColor="@color/color_green"
+            android:textSize="12sp"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/color_green"
+            app:strokeColor="@color/light_grey5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/uiBtnShareReceipt"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvDateAndTime"
+            />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uiBtnShareReceipt"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:backgroundTint="@color/light_grey5"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="@string/str_share_receipt"
+            android:drawablePadding="6dp"
+            android:layout_margin="10dp"
+            app:icon="@drawable/ic_share_receipt"
+            app:iconGravity="textStart"
+            android:textAllCaps="false"
+            android:textColor="@color/color_green"
+            app:drawableTint="@color/color_green"
+            android:textSize="12sp"
+            app:cornerRadius="8dp"
+            app:iconTint="@color/color_green"
+            app:strokeColor="@color/light_grey5"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvDateAndTime"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/uiBtnViewDetails"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/uiDone"
+        android:layout_margin="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_gravity="bottom"
+        android:background="?android:attr/windowBackground"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:backgroundTint="@color/color_green"
+        android:padding="10dp"
+        app:cardCornerRadius="10dp">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uiTvDone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:text="Done"
+            android:layout_gravity="center"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+    </androidx.cardview.widget.CardView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

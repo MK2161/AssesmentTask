@@ -9,3 +9,9 @@ data class AccountDetails(
     val bankName: String? = null,
     val accountBalance: String? = null,
 )
+
+
+data class BankDetails(
+    val icon: Int? = null,
+    val bankName: String? = null,
+)
