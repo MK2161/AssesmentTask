@@ -14,12 +14,18 @@ import com.example.assesmenttask.data.model.BankDetails
 class BankAdapter(
     private val context: Context,
     private val bankDetails: ArrayList<BankDetails>,
+    private val onBankClicked :() -> Unit,
 ): RecyclerView.Adapter<BankAdapter.BankViewHolder>() {
 
 
     inner class BankViewHolder(view: View) : RecyclerView.ViewHolder(view){
         var uiTvAccIcon: ImageView = view.findViewById(R.id.uiIvImages)
         var uiTvAccName: AppCompatTextView = view.findViewById(R.id.uiTvBankName)
+        init {
+            uiTvAccIcon.setOnClickListener {
+                onBankClicked()
+            }
+        }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BankViewHolder {

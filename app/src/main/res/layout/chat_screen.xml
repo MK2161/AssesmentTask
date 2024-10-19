@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_marginVertical="16dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiIvBackArrow"
+        android:layout_margin="20dp"
+        android:layout_marginTop="16dp"
+        android:foregroundGravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:src="@drawable/ic_back_arrow"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiTvHistory"
+        android:text="Ibrahim Mohammedali"
+        android:textColor="@color/dark_grey"
+        android:textSize="14sp"
+        android:fontFamily="@font/gilroy_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/uiIvBackArrow"
+        />
+    <androidx.appcompat.widget.AppCompatTextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/uiTvPersonNumber"
+        android:text="+91 87782 14386"
+        android:textColor="@color/grey"
+        android:layout_marginTop="2dp"
+        android:textSize="12sp"
+        android:fontFamily="@font/gilroy_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uiTvHistory"
+        />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/uiRvHistoryDetails"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="16dp"
+        android:background="@color/white"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintTop_toBottomOf="@+id/uiIvBackArrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/uiMcvSendMsg"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:visibility="visible"
+        tools:listitem="@layout/layout_message_screen"
+        tools:itemCount="9">
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="match_parent"
+        android:id="@+id/uiMcvSendMsg"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:cardBackgroundColor="@color/white"
+        app:strokeColor="@color/light_grey10"
+        app:cardCornerRadius="40dp"
+        app:strokeWidth="2dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <EditText
+                android:id="@+id/uiEtEnderAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@color/transparent"
+                android:layout_marginStart="15dp"
+                android:drawablePadding="4dp"
+                android:drawableStart="@drawable/inr_sympol"
+                android:hint="Enter amount or chat"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvGallery"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="14dp"
+                app:tint="@color/grey"
+                android:foregroundGravity="center"
+                app:layout_constraintEnd_toStartOf="@+id/uiIvAddMenu"
+                android:src="@android:drawable/ic_menu_gallery"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/uiIvAddMenu"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
+                android:layout_marginEnd="12dp"
+                app:tint="@color/grey"
+                app:layout_constraintEnd_toStartOf="@+id/uiIvSendMsg"
+                android:src="@android:drawable/ic_menu_add"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:id="@+id/uiIvSendMsg"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="-10dp"
+                android:layout_marginEnd="-4dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:src="@drawable/ic_send_msg"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </com.google.android.material.card.MaterialCardView>
+
+
+
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

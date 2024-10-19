@@ -11,6 +11,47 @@ import com.google.android.material.button.MaterialButton
 import com.google.android.material.card.MaterialCardView
 import java.util.Calendar
 
+
+fun Context.statementBottomSheet(
+    context: Context
+) {
+    val bottomSheet = LayoutInflater.from(this).inflate(R.layout.bottomsheet_statement_screen, null)
+    val dialog = BottomSheetDialog(this, R.style.BottomSheetDialog)
+    dialog.setContentView(bottomSheet)
+    dialog.show()
+    val downloadStatement = bottomSheet.findViewById< MaterialButton>(R.id.uiBtnDownloadStatement)
+
+    val uiFromDate = bottomSheet.findViewById<AppCompatTextView>(R.id.uiTvFromDate)
+    val uiToDate = bottomSheet.findViewById<AppCompatTextView>(R.id.uiTvToDate)
+    val fromDate = bottomSheet.findViewById<MaterialCardView>(R.id.uiMcvFromDate)
+    val toDate = bottomSheet.findViewById<MaterialCardView>(R.id.uiMcvToDate)
+    fromDate.setOnClickListener {
+        showDatePickerDialog(
+            context = context,
+            onClickAction = {
+                uiFromDate.text = it
+            }
+        )
+    }
+    toDate.setOnClickListener {
+        showDatePickerDialog(
+            context = context,
+            onClickAction = {
+                uiToDate.text = it
+            }
+        )
+    }
+
+
+    bottomSheet.findViewById<ImageView>(R.id.uiIvClose).setOnClickListener {
+        dialog.dismiss()
+    }
+    downloadStatement.setOnClickListener {
+        dialog.dismiss()
+    }
+
+}
+
 fun Context.showFaceBottomSheetDialog(
     context: Context
 ) {

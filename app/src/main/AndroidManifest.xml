@@ -68,6 +68,14 @@
             android:name=".ui.AccountLoadingScreen"
             android:exported="true">
         </activity>
+        <activity
+            android:name=".ui.DownloadPendingScreen"
+            android:exported="true">
+        </activity>
+        <activity
+            android:name=".ui.DownloadSuccessScreen"
+            android:exported="true">
+        </activity>
 
 
     </application>

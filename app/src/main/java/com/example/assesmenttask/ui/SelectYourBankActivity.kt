@@ -1,5 +1,6 @@
 package com.example.assesmenttask.ui
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContentProviderCompat.requireContext
@@ -36,32 +37,32 @@ class SelectYourBankActivity:AppCompatActivity() {
                 bankName = "Bank of Baroda",
             ),
             BankDetails(
-                icon = R.drawable.ic_sbi,
-                bankName = "State Bank of India",
+                icon = R.drawable.ic_united_bank,
+                bankName = "United Bank of India",
             ),
             BankDetails(
                 icon = R.drawable.ic_bank_of_baroda,
                 bankName = "Bank of Baroda",
             ),
             BankDetails(
+                icon = R.drawable.ic_united_bank,
+                bankName = "United Bank of India",
+            ),
+            BankDetails(
+                icon = R.drawable.ic_sbi,
+                bankName = "State Bank of India",
+            ),
+            BankDetails(
+                icon = R.drawable.ic_united_bank,
+                bankName = "United Bank of India",
+            ),
+            BankDetails(
                 icon = R.drawable.ic_sbi,
                 bankName = "State Bank of India",
             ),
             BankDetails(
                 icon = R.drawable.ic_bank_of_baroda,
-                bankName = "Bank of Baroda",
-            ),
-            BankDetails(
-                icon = R.drawable.ic_sbi,
-                bankName = "State Bank of India",
-            ),
-            BankDetails(
-                icon = R.drawable.ic_bank_of_baroda,
-                bankName = "Bank of Baroda",
-            ),
-            BankDetails(
-                icon = R.drawable.ic_sbi,
-                bankName = "State Bank of India",
+                bankName = "bank_of_baroda",
             ),
         )
         val recyclerView = binding?.uiRvBank
@@ -71,7 +72,11 @@ class SelectYourBankActivity:AppCompatActivity() {
         recyclerView?.layoutManager = gridLayoutManager
         recyclerView?.adapter = BankAdapter(
             context = this,
-            bankDetails = bankDetails
+            bankDetails = bankDetails,
+            onBankClicked = {
+                val intent = Intent(this,DownloadPendingScreen::class.java)
+                startActivity(intent)
+            }
         )
 
         val searchRecyclerView = binding?.uiRvBankDetailsName

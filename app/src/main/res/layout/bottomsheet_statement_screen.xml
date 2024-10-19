@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginVertical="16dp"
+    android:background="@drawable/bg_white_corner">
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/uiTvFilterPayments"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="Statement"
+        android:textColor="@color/dark_grey"
+        android:textSize="20sp"
+        android:fontFamily="@font/gilroy_bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/uiIvClose"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_close"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uiCvPaymentSection"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uiTvFilterPayments">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uiTvPaymentSource"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Statement type"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroupPaymentSource"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvPaymentSource"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipQpayLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                app:chipIcon="@drawable/ic_qpay_wallet"
+                android:text="@string/str_qpay_wallet"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="true"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipUnitedBank"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_united_bank_of_india_5221"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipIcon="@drawable/ic_united_bank"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipSbi"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_sbi_3941"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipIcon="@drawable/ic_sbi"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/uiChipBankOfBaroda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_bank_of_baroda_4989"
+                android:textColor="@color/grey"
+                app:chipIcon="@drawable/ic_bank_of_baroda"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uiCvDateRange"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uiCvPaymentSection">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/uiTvDateRange"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_date_range"
+            android:textColor="@color/dark_grey"
+            android:textSize="12sp"
+            android:fontFamily="@font/gilroy_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/uiMcvFromDate"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/uiMcvToDate"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvDateRange"
+            app:strokeColor="@color/grey_10"
+            app:strokeWidth="2dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvFromDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:background="@color/transparent"
+                android:text="@string/str_from"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                android:fontFamily="@font/gilroy_medium" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/uiMcvToDate"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
+            app:cardBackgroundColor="@color/white"
+            app:cardCornerRadius="8dp"
+            app:layout_constraintStart_toEndOf="@+id/uiMcvFromDate"
+            app:layout_constraintTop_toBottomOf="@+id/uiTvDateRange"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:strokeColor="@color/grey_10"
+            app:strokeWidth="2dp">
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/uiTvToDate"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:layout_marginEnd="16dp"
+                android:enabled="false"
+                android:drawableEnd="@drawable/ic_calendar"
+                android:background="@color/transparent"
+                android:text="@string/str_to"
+                android:textColor="@color/grey"
+                android:textSize="12sp"
+                android:fontFamily="@font/gilroy_medium" />
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chipGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/uiMcvFromDate"
+            app:selectionRequired="true"
+            app:singleSelection="true">
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast1Month"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="@string/str_last_1_month"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast3Months"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_last_3_months"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast6Months"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_last_6_months"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                android:textColor="@color/grey"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chipLast1Year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/str_last_1_year"
+                android:textColor="@color/grey"
+                android:fontFamily="@font/gilroy_medium"
+                android:textSize="12sp"
+                app:checkedIconVisible="false"
+                app:chipBackgroundColor="@color/white"
+                app:chipCornerRadius="16dp"
+                app:chipStrokeColor="@color/grey_10"
+                app:chipStrokeWidth="1dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/uiCvBottombarButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/uiCvDateRange">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/uiBtnDownloadStatement"
+            style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/color_green"
+            android:fontFamily="@font/gilroy_medium"
+            android:text="Download Statement"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="12sp"
+            app:cornerRadius="8dp"
+            app:icon="@drawable/ic_view_statement"
+            app:iconSize="14dp"
+            app:iconTint="@color/white"
+            app:iconGravity="textStart"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

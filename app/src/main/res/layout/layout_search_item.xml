@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:background="@color/white"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_height="wrap_content">
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/uiCvImage"
@@ -41,9 +40,8 @@
     <View
         android:id="@+id/uiViewBottomDivider"
         android:layout_width="match_parent"
-        android:layout_height="2dp"
-        android:layout_marginVertical="15dp"
-        android:layout_marginHorizontal="10dp"
+        android:layout_height="1dp"
+        android:layout_marginVertical="12dp"
         android:background="@color/grey_10"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/uiCvImage" />

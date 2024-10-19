@@ -47,7 +47,7 @@ class UpiActivity : AppCompatActivity() {
         setTextChangeListener(fromEditText = binding?.uiEtFour, targetEditText = binding?.uiEtFive)
         setTextChangeListener(fromEditText = binding?.uiEtFive, targetEditText = binding?.uiEtSix)
         setTextChangeListener(fromEditText = binding?.uiEtSix, done = {
-            val intent = Intent(this, AddAccountActivity :: class.java)
+            val intent = Intent(this, SelectYourBankActivity :: class.java)
             startActivity(intent)
             reset()
 
